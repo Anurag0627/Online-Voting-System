@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #0f172a;
+    border-radius: 20px;
+    animation: fadeIn 1s ease;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #38bdf8;
+    text-shadow: 0 0 12px #0ea5e9;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.8;
+    color: #cbd5e1;
+}
+
+/* Button Styling */
+.hero-buttons {
+    margin-top: 35px;
+}
+
+.btn-main {
+    padding: 14px 24px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.vote-btn {
+    background: #38bdf8;
+    color: black;
+}
+.vote-btn:hover {
+    background: #0ea5e9;
+    transform: scale(1.07);
+}
+
+.login-btn {
+    background: #1e293b;
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+}
+.login-btn:hover {
+    background: #38bdf8;
+    color: black;
+    transform: scale(1.07);
+}
+
+/* Feature Cards */
+.features {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    animation: slideUp 1.2s ease;
+}
+
+.feature-card h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+.feature-card p {
+    opacity: 0.8;
+    color: #e2e8f0;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>Digital College Election System</h1>
+    <p>Secure • Transparent • Anonymous • Fast Vote Counting</p>
+
+    <div class="hero-buttons">
+        <a href="/vote_page">
+            <button class="btn-main vote-btn">🗳 Cast Vote</button>
+        </a>
+
+        <a href="/results_page">
+            <button class="btn-main vote-btn">📊 View Results</button>
+        </a>
+
+        <a href="/login_page">
+            <button class="btn-main login-btn">🔐 Login</button>
+        </a>
+
+        <a href="/register_page">
+            <button class="btn-main login-btn">📝 Register</button>
+        </a>
+    </div>
+</div>
+
+
+<!-- FEATURE CARDS -->
+<div class="features">
+
+    <div class="feature-card">
+        <h3>🔒 Secure Voting</h3>
+        <p>Your identity remains protected while ensuring one voter–one vote.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>⚡ Instant Results</h3>
+        <p>Votes are counted instantly with real-time result display.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>📱 Easy to Use</h3>
+        <p>Students can vote anytime, anywhere using a simple interface.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🛡 Tamper-Proof System</h3>
+        <p>Prevents duplicate votes and ensures full election transparency.</p>
+    </div>
+
+</div>
+
+{% endblock %}
