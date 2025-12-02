@@ -1,20 +1,89 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 style="text-align:center; animation: fadeIn 1s;">Admin Login</h2>
+<style>
+    .admin-login-box {
+        width: 420px;
+        margin: auto;
+        background: #1e293b;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        animation: fadeIn 1s;
+        border: 1px solid #38bdf8;
+    }
 
-<form method="POST" action="/admin_login" style="animation: slideUp 1.2s;">
-    <label>Email</label>
-    <input type="text" name="username">
+    .admin-login-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #38bdf8;
+    }
 
-    <label>Password</label>
-    <input type="password" name="password">
+    .admin-login-box label {
+        color: #cbd5e1;
+        font-size: 14px;
+        margin-top: 10px;
+        display: block;
+    }
 
-    <button type="submit">Login</button>
-</form>
+    .admin-input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: #0f172a;
+        color: white;
+        border: 1px solid #334155;
+    }
 
-{% if error %}
-<p style="color:#f87171;">{{ error }}</p>
-{% endif %}
+    .admin-btn {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        border: none;
+        background: #38bdf8;
+        color: black;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .admin-btn:hover {
+        background: #0ea5e9;
+        transform: scale(1.05);
+    }
+
+    .error-box {
+        color: #f87171;
+        text-align: center;
+        margin-top: 12px;
+        animation: fadeIn 0.8s;
+        font-weight: bold;
+    }
+</style>
+
+
+<div class="admin-login-box">
+
+    <h2>🔐 Admin Login</h2>
+
+    <form method="POST" action="/admin_login">
+
+        <label>Email</label>
+        <input type="text" name="username" class="admin-input" placeholder="admin@gmail.com" required>
+
+        <label>Password</label>
+        <input type="password" name="password" class="admin-input" placeholder="Enter Admin Password" required>
+
+        <button type="submit" class="admin-btn">Login</button>
+    </form>
+
+    {% if error %}
+        <p class="error-box">{{ error }}</p>
+    {% endif %}
+
+</div>
 
 {% endblock %}
